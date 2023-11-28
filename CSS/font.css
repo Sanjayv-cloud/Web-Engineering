@@ -1,4 +1,13 @@
-h1{
-    text-align: center;
-    background-color: gray;
+a:link{
+    color: aqua;
+}
+a:visited{
+    color: blue;
+}
+a:hover{
+    color: blueviolet;
+    text-decoration: underline;
+}
+a:active{
+    color: coral;
 }
