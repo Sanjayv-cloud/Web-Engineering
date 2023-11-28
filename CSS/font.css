@@ -7,7 +7,13 @@ a:visited{
 a:hover{
     color: blueviolet;
     text-decoration: underline;
+    font-family: cursive;
+    
 }
 a:active{
     color: coral;
+}
+
+h1{
+    background-color: brown;
 }
