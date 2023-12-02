@@ -1,0 +1,49 @@
+<!-- HTML Editor -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+</head>
+<body>
+
+    <h1>Grade Calculator</h1>
+
+    <label for="score">Enter test score:</label>
+    <input type="number" id="score">
+    <button onclick="calculateGrade()">Calculate Grade</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateGrade() {
+            // Get the test score from the input field
+            const score = parseFloat(document.getElementById('score').value);
+
+            // Determine the letter grade using a switch statement
+            let grade;
+            switch (true) {
+                case score >= 90:
+                    grade = 'A';
+                    break;
+                case score >= 80:
+                    grade = 'B';
+                    break;
+                case score >= 70:
+                    grade = 'C';
+                    break;
+                case score >= 60:
+                    grade = 'D';
+                    break;
+                default:
+                    grade = 'E';
+            }
+
+            // Display the result on the HTML page
+            document.getElementById('result').innerText = `The student's grade is: ${grade}`;
+        }
+    </script>
+
+</body>
+</html>

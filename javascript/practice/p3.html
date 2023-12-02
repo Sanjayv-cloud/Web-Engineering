@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Number Checker</title>
+
+</head>
+<body>
+
+  <h2>Prime Number Checker</h2>
+
+  <label for="numberInput">Enter a number:</label>
+  <input type="number" id="numberInput" placeholder="Enter a number">
+<br>
+  <button onclick="checkPrimeNumber()">Check Prime Number</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    function isPrimeNumber(numberInput) {
+      if (numberInput <= 1) {
+        return false;
+      }
+      for (let i = 2; i <= Math.sqrt(numberInput); i++) {
+        if (numberInput % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function checkPrimeNumber() {
+      const numberInput = document.getElementById('numberInput').value;
+      const resultDiv = document.getElementById('result');
+
+      if (!numberInput ) {
+        resultDiv.innerText = 'Please enter a valid number.';
+      } else {
+        const isPrime = isPrimeNumber(numberInput);
+        
+        if (isPrime) {
+          resultDiv.innerText = `${numberInput} is a prime number.`;
+        } else {
+          resultDiv.innerText = `${numberInput} is not a prime number.`;
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
