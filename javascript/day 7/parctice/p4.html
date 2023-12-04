@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Tool</title>
+</head>
+<body>
+
+<script>
+    // Define the person object
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        fullName: function() {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    // Define the member object
+    const member = {
+        firstName: "Jane",
+        lastName: "Doe",
+    };
+
+    // Use bind to adopt the fullName function for the member object
+    member.getFullName = person.fullName.bind(member);
+
+    // Display the result
+    document.write("<p>Member's Full Name: " + member.getFullName() + "</p>");
+</script>
+
+</body>
+</html>

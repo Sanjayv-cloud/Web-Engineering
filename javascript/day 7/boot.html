@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Pyramid</title>
+    <style>
+        pre {
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function printDiamond(rows) {
+        // Upper part of the diamond
+        let result = '';
+        for (let i = 1; i <= rows; i++) {
+            let line = '';
+            for (let j = 1; j <= 2 * rows - 1; j++) {
+                if (j >= rows - (i - 1) && j <= rows + (i - 1)) {
+                    line += '*';
+                } else {
+                    line += ' ';
+                }
+            }
+            result += line + '\n';
+        };
+
+        // Lower part of the diamond
+        for (let i = rows - 1; i >= 1; i--) {
+            let line = '';
+            for (let j = 1; j <= 2 * rows - 1; j++) {
+                if (j >= rows - (i - 1) && j <= rows + (i - 1)) {
+                    line += '*';
+                } else {
+                    line += ' ';
+                }
+            }
+            result += line + '\n';
+        }
+
+        return result;
+    }
+
+    // Example usage
+    const rows = prompt("Enter the number of rows you want:");
+    const diamondPattern = printDiamond(parseInt(rows));
+
+    // Display the pattern in a pre element
+    document.body.innerHTML += '<pre>' + diamondPattern + '</pre>';
+</script>
+
+</body>
+</html>

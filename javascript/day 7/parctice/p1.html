@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <script>
+            class Car {
+                
+                constructor(brand, model, year, fuelType) {
+                    this.brand = brand;
+                    this.model = model;
+                    this.year = year;
+                    this.fuelType = fuelType;
+                    this.fuelEfficiency = "average";
+                }
+
+                getFuelEfficiency() {
+                    return this.fuelEfficiency;
+                }
+
+                setFuelEfficiency(newEfficiency) {
+                    this.fuelEfficiency = newEfficiency;
+                }
+
+                displayInfo() {
+                    document.write(`Year: ${this.year}` + "<br>");
+                    document.write(`Brand: ${this.brand}` + "<br>");
+                    document.write(`Model: ${this.model}` + "<br>");
+                    document.write(`Fuel Type: ${this.fuelType}` + "<br>");
+                    document.write(`Fuel Efficiency: ${this.fuelEfficiency}` + "<br>");
+                }
+            }
+
+            const car1 = new Car("Hyundai", "Creta", 2022, "Petrol");
+            const car2 = new Car("Tata", "Tiago", 2023, "Electricity");
+
+            car1.displayInfo();
+            car2.displayInfo();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakery Recipes</title>
+</head>
+<body>
+
+<script>
+  class Bakery {
+    constructor(maida, milk, egg, cocoPowder) {
+      this.maida = maida;
+      this.milk = milk;
+      this.egg = egg;
+      this.cocoPowder = cocoPowder;
+      this.sugar = "country sugar";
+    }
+
+    bakeCake() {
+      document.write("<p>Baking a delicious cake!</p>");
+      // Add your baking logic here
+    }
+
+    makeCookies() {
+      document.write("<p>Making scrumptious cookies!</p>");
+      // Add your cookie-making logic here
+    }
+  }
+
+  // Example usage:
+  const chocolateCake = new Bakery("all-purpose flour", "whole milk", 3, "dark cocoa");
+  const vanillaCookies = new Bakery("cake flour", "skim milk", 2, "vanilla cocoa");
+
+  // Call methods and output the results
+  chocolateCake.bakeCake();
+  vanillaCookies.makeCookies();
+</script>
+
+</body>
+</html>

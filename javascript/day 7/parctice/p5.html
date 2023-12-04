@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetBuddy</title>
+</head>
+<body>
+
+<script>
+    function calculate(...expenses) {
+        // Using the rest parameter to gather all expenses
+        // Calculate the total by using reduce
+        const total = expenses.reduce((acc, expense) => acc + expense, 0);
+        return total;
+    }
+
+    // Example expenses entered by the user
+    const expense1 = 50;
+    const expense2 = 30;
+    const expense3 = 70;
+
+    // Calculate the total expenses
+    const totalExpenses = calculate(expense1, expense2, expense3);
+
+    // Display the result
+    document.write("<p>Total Expenses: $" + totalExpenses + "</p>");
+</script>
+
+</body>
+</html>
