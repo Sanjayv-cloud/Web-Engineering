@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TypeScript DOM Manipulation - Question 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.1.5/typescript.min.js"></script>
+    <script>
+      function runTypeScript() {
+        const tsCode = document.getElementById('ts-code').textContent;
+        if (tsCode) {
+          const jsCode = ts.transpile(tsCode);
+          eval(jsCode);
+        }
+      }
+    </script>
+</head>
+<body onload="runTypeScript();">
+    <script id="ts-code" type="text/typescript">
+
+class Student {
+  constructor(public name: string, public department: string, public regNumber: string) {}
+}
+
+function createStudent(): Student {
+  const name: string = prompt("Enter Name:");
+  const department: string = prompt("Enter Department:");
+  const regNumber: string = prompt("Enter Registration Number:");
+
+  if (!name || !department || !regNumber) {
+    console.log("Invalid input. Please enter valid details.");
+    return null;
+  }
+
+  return new Student(name, department, regNumber);
+}
+
+function displayStudentDetails(student: Student): void {
+  document.write("Student Details:"+"<br>");
+  document.write("Name:", student.name+"<br>");
+  document.write("Department:", student.department+"<br>");
+  document.write("Registration Number:", student.regNumber);
+}
+
+function main() {
+  const newStudent: Student = createStudent();
+
+  if (newStudent) {
+    displayStudentDetails(newStudent);
+  }
+}
+
+main();
+</script>
+</body>
+</html>

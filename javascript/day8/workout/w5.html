@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TypeScript DOM Manipulation - Question 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.1.5/typescript.min.js"></script>
+    <script>
+      function runTypeScript() {
+        const tsCode = document.getElementById('ts-code').textContent;
+        if (tsCode) {
+          const jsCode = ts.transpile(tsCode);
+          eval(jsCode);
+        }
+      }
+    </script>
+</head>
+<body onload="runTypeScript();">
+    <script id="ts-code" type="text/typescript">
+    
+interface Car {
+  brand: string;
+  model: string;
+}
+
+const myCar: Car = {
+  brand: "Toyota",
+  model: "Camry",
+};
+
+const carBrand: string = myCar.brand;
+const carModel: string = myCar.model;
+
+document.write("Brand:", carBrand+"<br>");
+document.write("Model:", carModel);
+</script>
+</body>
+</html>

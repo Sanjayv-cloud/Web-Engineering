@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TypeScript DOM Manipulation - Question 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.1.5/typescript.min.js"></script>
+    <script>
+      function runTypeScript() {
+        const tsCode = document.getElementById('ts-code').textContent;
+        if (tsCode) {
+          const jsCode = ts.transpile(tsCode);
+          eval(jsCode);
+        }
+      }
+    </script>
+</head>
+<body onload="runTypeScript();">
+    <script id="ts-code" type="text/typescript">
+    class Person {
+  private name: string;
+  private age: number;
+
+  constructor(private welcomeMessage: string) {
+    this.name = "amypo";
+    this.age = 7;
+    document.write(this.welcomeMessage+"<br>");
+  }
+
+  printName(customName: string): void {
+    document.write(Custom Name: ${customName});
+  }
+
+  getName(): string {
+    return this.name;
+  }
+  
+  getAge(): number {
+    return this.age;
+  }
+}
+
+
+const myPerson: Person = new Person("Hello, welcome!");
+
+document.write("Name:", myPerson.getName()+"<br>");
+document.write("Age:", myPerson.getAge()+"<br>");
+myPerson.printName("John Doe");
+
+    </script>
+</body>
+</html>

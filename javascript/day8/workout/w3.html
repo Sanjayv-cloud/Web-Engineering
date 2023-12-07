@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TypeScript DOM Manipulation - Question 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.1.5/typescript.min.js"></script>
+    <script>
+        function runTypeScript() {
+            const tsCode = document.getElementById('ts-code').textContent;
+            if (tsCode) {
+                const jsCode = ts.transpile(tsCode);
+                eval(jsCode);
+            }
+        }
+    </script>
+</head>
+<body onload="runTypeScript();">
+    <script id="ts-code" type="text/typescript">
+        function add(a: number, b: number): void {
+            const sum: number = a + b;
+            document.write(`The sum is: ${sum}<br>`);
+        }
+
+        function add1(): void {
+            const num1: number = 15;
+            const num2: number = 10;
+            const sum: number = num1 + num2;
+            document.write(`The sum is: ${sum}`);
+        }
+
+        let num1: number = 5;
+        let num2: number = 10;
+        add(num1, num2);
+
+        add1();
+    </script>
+</body>
+</html>

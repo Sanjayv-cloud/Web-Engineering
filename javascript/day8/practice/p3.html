@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TypeScript DOM Manipulation - Question 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.1.5/typescript.min.js"></script>
+    <script>
+      function runTypeScript() {
+        const tsCode = document.getElementById('ts-code').textContent;
+        if (tsCode) {
+          const jsCode = ts.transpile(tsCode);
+          eval(jsCode);
+        }
+      }
+    </script>
+</head>
+<body onload="runTypeScript();">
+    <script id="ts-code" type="text/typescript">
+    
+function add(a: number, b: number): number {
+  const sum: number = a + b;
+  return sum;
+}
+
+function add1(): number {
+  const num1: number = 15;
+  const num2: number = 10;
+  const sum: number = num1 + num2;
+  return sum;
+}
+
+let num1: number = 5;
+let num2: number = 10;
+const resultWithParameters: number = add(num1, num2);
+document.write("The sum is:", resultWithParameters+"<br>");
+
+// Using the add1() function
+const resultWithoutParameters: number = add1();
+document.write("The sum is:", resultWithoutParameters);
+
+    </script>
+</body>
+</html>

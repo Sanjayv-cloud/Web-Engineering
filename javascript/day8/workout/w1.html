@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TypeScript DOM Manipulation - Question 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.1.5/typescript.min.js"></script>
+    <script>
+      function runTypeScript() {
+        const tsCode = document.getElementById('ts-code').textContent;
+        if (tsCode) {
+          const jsCode = ts.transpile(tsCode);
+          eval(jsCode);
+        }
+      }
+    </script>
+</head>
+<body onload="runTypeScript();">
+    <script id="ts-code" type="text/typescript">
+
+class Package {
+  constructor(public packageId: string, public destination: string, public weight: number) {}
+}
+
+function createPackage(): Package {
+  const packageId: string = prompt("Enter Package ID:");
+  const destination: string = prompt("Enter Destination:");
+  const weight: number = parseFloat(prompt("Enter Weight (in kg):"));
+
+  if (!packageId || !destination || isNaN(weight) || weight <= 0) {
+    document.write("Invalid input. Please enter valid details.");
+    return null;
+  }
+
+  return new Package(packageId, destination, weight);
+}
+
+function displayPackageDetails(package: Package): void {
+  document.write("Package Details:"+"<br>");
+  document.write("Package ID:", package.packageId+"<br>");
+  document.write("Destination:", package.destination+"<br>");
+  document.write("Weight:", package.weight, "kg"+"<br>");
+}
+
+function main() {
+    
+  const newPackage: Package = createPackage();
+
+  if (newPackage) {
+    displayPackageDetails(newPackage);
+  }
+}
+
+main();
+</script>
+</body>
+</html>
